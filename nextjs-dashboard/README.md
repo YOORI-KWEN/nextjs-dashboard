@@ -1,5 +1,38 @@
-## Next.js App Router Course - Starter
+8장
 
-This is the starter template for the Next.js App Router Course. It contains the starting code for the dashboard application.
+정적 렌더링
+데이터 가져오기 및 렌더링이 빌드시점 또는 데이터 재검증시 서버에서 발생
+데이터가 없거나 사용가 간 공유되는 데이터가 있는 ui에 유리 (ex : 정적인 블로그 게시물, 제품 페이지)
 
-For more information, see the [course curriculum](https://nextjs.org/learn) on the Next.js Website.
+웹사이트 속도 향상됨
+서버 부하 감소
+seo 검색 엔진 색인화 쉬움
+
+동적 렌더링
+사용자가 페이지를 방문하는 시점에 서버에서 렌더링
+애플리케이션의 속도 = 가장 느린 데이터를 가져오는 속도에 따라 결정됨
+
+실시간 데이터
+사용자 맞춤형 콘텐츠
+요청시간 정보 
+
+
+9장
+
+스트리밍
+데이터 전송 기술, 경로를 더 작은 chunks로 나누고 
+서버에서 클라이언트로 준비되는 대로 점진적으로 전송하는 기술
+느린데이터 요청으로 페이지 전체가 차단되는 현상 방지
+
+Next.js에서 스트리밍 구현 방법
+1. 페이지 전체를 스트리밍
+폴더상속 상위폴더에/loading.tsx 존재하면 그 밑 모든 페이지에 적용되는데
+폴더 이름을 소괄호로 감싸주면(경로그룹 사용) -> 소괄호이름 폴더 밖에는 더이상 적용 안됨
+
+2. 컴포넌트 단위 스트리밍
+React Suspense 사용하여 특정 컴포넌트만 스트리밍 가능
+특정 조건이 충돌도리 때까지 일부 렌더링 지연시킴
+동적 컴포넌트를  Suspense로 감싸고, 로드전에 표시할 대체 컴포넌트 전달함
+
+
+
